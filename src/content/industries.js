@@ -1,0 +1,58 @@
+export const industries = [
+  {
+    slug: 'retail-commerce',
+    name: 'Retail & Commerce',
+    text: 'Inventory, margin and multi-channel revenue tracked with clarity.',
+    image: { id: '37080686', alt: 'Contemporary retail store interior with organised displays' },
+    services: ['accounting-bookkeeping', 'financial-management'],
+  },
+  {
+    slug: 'professional-services',
+    name: 'Professional Services',
+    text: 'Utilisation, billing cycles and work-in-progress kept under control.',
+    image: { id: '5668492', alt: 'Professional team reviewing project figures around a table' },
+    services: ['financial-management', 'financial-reporting'],
+  },
+  {
+    slug: 'manufacturing',
+    name: 'Manufacturing',
+    text: 'Cost of production, inventory valuation and capital planning.',
+    image: { id: '34718930', alt: 'Industrial production line inside a modern factory' },
+    services: ['financial-reporting', 'business-consulting'],
+  },
+  {
+    slug: 'construction',
+    name: 'Construction',
+    text: 'Project costing, staged billing and cash flow across long cycles.',
+    image: { id: '32716845', alt: 'Tower crane above an urban construction site' },
+    services: ['financial-management', 'tax-consulting'],
+  },
+  {
+    slug: 'technology-startups',
+    name: 'Technology & Startups',
+    text: 'Runway visibility, investor reporting and scalable record structures.',
+    image: { id: '7534232', alt: 'Contemporary open-plan office with natural light' },
+    services: ['financial-reporting', 'business-consulting'],
+  },
+  {
+    slug: 'healthcare-wellness',
+    name: 'Healthcare & Wellness',
+    text: 'Practice finances, payroll and compliance documentation handled carefully.',
+    image: { id: '33812025', alt: 'Modern medical reception area with warm wood detailing' },
+    services: ['payroll-services', 'tax-consulting'],
+  },
+  {
+    slug: 'real-estate',
+    name: 'Real Estate',
+    text: 'Portfolio reporting, rental income tracking and entity structures.',
+    image: { id: '18153132', alt: 'Modern residential building façade against the sky' },
+    services: ['financial-reporting', 'business-consulting'],
+  },
+  {
+    slug: 'hospitality',
+    name: 'Hospitality',
+    text: 'Daily revenue reconciliation, cost control and seasonal planning.',
+    image: { id: '14036253', alt: 'Elegant hotel lobby with contemporary furnishings' },
+    services: ['accounting-bookkeeping', 'financial-management'],
+  },
+]

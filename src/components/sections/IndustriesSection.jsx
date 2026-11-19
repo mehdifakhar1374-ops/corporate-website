@@ -1,0 +1,43 @@
+import { Link } from 'react-router-dom'
+import { industries } from '../../content/industries.js'
+import SectionHead from '../SectionHead.jsx'
+import Photo from '../Photo.jsx'
+import Reveal from '../Reveal.jsx'
+
+export default function IndustriesSection() {
+  return (
+    <section className="section section--white" id="industries" aria-labelledby="industries-title">
+      <div className="container">
+        <SectionHead
+          id="industries-title"
+          label="Who We Help"
+          title="Financial Expertise Across Industries"
+          text="Every sector has its own rhythm of revenue, cost and compliance. We adapt our work to the way your business actually operates."
+        />
+
+        <div className="industries-grid" style={{ marginTop: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
+          {industries.map((industry, index) => (
+            <Reveal key={industry.slug} delay={index * 45}>
+              <Link
+                className="industry"
+                to={`/services/${industry.services[0]}`}
+                aria-label={`${industry.name} — explore related services`}
+              >
+                <Photo
+                  image={industry.image}
+                  width={640}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1023px) 50vw, 25vw"
+                />
+                <div className="industry__body">
+                  <p className="industry__index">{String(index + 1).padStart(2, '0')}</p>
+                  <h3 className="industry__name">{industry.name}</h3>
+                  <p className="industry__text">{industry.text}</p>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
