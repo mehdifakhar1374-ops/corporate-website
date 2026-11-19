@@ -8,8 +8,8 @@ export default function TestimonialsSection() {
       <div className="container">
         <SectionHead
           id="testimonials-title"
-          label="Client Experiences"
-          title="Built on Trust. Strengthened by Results."
+          label="تجربه مشتریان"
+          title="بر پایه اعتماد. تقویت‌شده با نتایج."
           align="center"
         />
         <Reveal style={{ marginTop: 'clamp(2.5rem, 4vw, 3.5rem)' }}>

@@ -14,7 +14,7 @@ export default function AboutSection() {
           <p>{about.lead}</p>
           <p>{about.body}</p>
           <Link className="link-arrow" to="/about">
-            Learn More
+            بیشتر بدانید
             <ArrowRight size={16} />
           </Link>
         </Reveal>
@@ -32,7 +32,7 @@ export default function AboutSection() {
             width={520}
             sizes="(max-width: 1023px) 40vw, 18vw"
           />
-          <Link to="/about" className="about-media__badge" aria-label="More about Horizon Financial Services">
+          <Link to="/about" className="about-media__badge" aria-label="بیشتر درباره خدمات مالی افق">
             <ArrowUpRight size={22} />
           </Link>
         </Reveal>

@@ -20,10 +20,10 @@ export default function TeamCard({ member }) {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${member.name} on LinkedIn (opens in a new tab)`}
+          aria-label={`${member.name} در لینکدین (در برگه جدید باز می‌شود)`}
         >
           <LinkedIn size={14} />
-          LinkedIn
+          لینکدین
         </a>
       </div>
     </article>

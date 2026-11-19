@@ -10,9 +10,9 @@ export default function IndustriesSection() {
       <div className="container">
         <SectionHead
           id="industries-title"
-          label="Who We Help"
-          title="Financial Expertise Across Industries"
-          text="Every sector has its own rhythm of revenue, cost and compliance. We adapt our work to the way your business actually operates."
+          label="به چه کسانی کمک می‌کنیم"
+          title="تخصص مالی در صنایع مختلف"
+          text="هر بخش اقتصاد ریتم خاص خود را در درآمد، هزینه و انطباق دارد. کار خود را با نحوه واقعی فعالیت کسب‌وکار شما سازگار می‌کنیم."
         />
 
         <div className="industries-grid" style={{ marginTop: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
@@ -21,7 +21,7 @@ export default function IndustriesSection() {
               <Link
                 className="industry"
                 to={`/services/${industry.services[0]}`}
-                aria-label={`${industry.name} — explore related services`}
+                aria-label={`${industry.name} — مشاهده خدمات مرتبط`}
               >
                 <Photo
                   image={industry.image}

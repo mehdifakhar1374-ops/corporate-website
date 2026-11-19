@@ -25,7 +25,7 @@ export default function ArticleCard({ article, featured = false }) {
         <h3 className="article-card__title">{article.title}</h3>
         <p className="article-card__excerpt">{article.excerpt}</p>
         <span className="article-card__more link-arrow">
-          Read More
+          ادامه مطلب
           <ArrowRight size={16} />
         </span>
       </div>

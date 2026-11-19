@@ -7,36 +7,37 @@ import ApproachSection from '../components/sections/ApproachSection.jsx'
 import TeamSection from '../components/sections/TeamSection.jsx'
 import { about, expertise, mission, values, vision } from '../content/company.js'
 import usePageMeta from '../lib/usePageMeta.js'
+import { faDigits } from '../lib/images.js'
 
 export default function About() {
   usePageMeta(
-    'About Us — Horizon Financial Services',
-    'Horizon Financial Services provides accounting, financial consulting and business management services built on accuracy, transparency and long-term client relationships.',
+    'درباره ما — خدمات مالی افق',
+    'خدمات مالی افق، خدمات حسابداری، مشاوره مالی و مدیریت کسب‌وکار را بر پایه دقت، شفافیت و روابط بلندمدت با مشتری ارائه می‌کند.',
   )
 
   return (
     <>
       <PageHero
-        eyebrow="About Us"
-        title="A Financial Partner Built on Clarity and Discipline"
-        text="We are an accounting and financial management firm working with business owners who want their numbers to be reliable, current and useful."
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'About Us' }]}
-        image={{ id: '14527417', alt: 'Low-angle view of modern glass office towers' }}
+        eyebrow="درباره ما"
+        title="شریک مالی‌ای بر پایه شفافیت و نظم"
+        text="ما یک شرکت حسابداری و مدیریت مالی هستیم که با صاحبان کسب‌وکاری کار می‌کند که می‌خواهند ارقامشان قابل اعتماد، به‌روز و کاربردی باشد."
+        breadcrumb={[{ label: 'خانه', to: '/' }, { label: 'درباره ما' }]}
+        image={{ id: '14527417', alt: 'نمای از پایین برج‌های شیشه‌ای مدرن اداری' }}
       />
 
       <section className="section section--white" aria-labelledby="who-title">
         <div className="container about-intro">
           <Reveal className="about-intro__body">
-            <p className="eyebrow">Our Story</p>
+            <p className="eyebrow">داستان ما</p>
             <h2 id="who-title" style={{ marginTop: '1.1rem' }}>
-              Who We Are
+              ما که هستیم
             </h2>
             <p>{about.lead}</p>
             <p>{about.body}</p>
             <p>
-              We work with small and medium-sized businesses, entrepreneurs, professional service
-              firms and established corporate organizations. Each engagement is led by a named
-              professional who is accountable for the quality and timeliness of the work.
+              ما با کسب‌وکارهای کوچک و متوسط، کارآفرینان، شرکت‌های خدمات حرفه‌ای و سازمان‌های
+              شرکتی تثبیت‌شده کار می‌کنیم. هر همکاری توسط یک متخصص مشخص رهبری می‌شود که در قبال
+              کیفیت و به‌موقع بودن کار پاسخگو است.
             </p>
           </Reveal>
 
@@ -54,19 +55,19 @@ export default function About() {
         <div className="container">
           <SectionHead
             id="mission-title"
-            label="Purpose"
-            title="What We Work Toward"
-            text="Two commitments shape how we run the firm and how we serve every client."
+            label="هدف"
+            title="برای چه تلاش می‌کنیم"
+            text="دو تعهد شکل‌دهنده نحوه اداره شرکت و نحوه خدمت به هر مشتری است."
           />
 
           <div className="mv-grid" style={{ marginTop: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
             <Reveal className="mv-card">
-              <p className="eyebrow eyebrow--plain">Mission</p>
+              <p className="eyebrow eyebrow--plain">مأموریت</p>
               <h3 style={{ marginTop: '0.85rem' }}>{mission.title}</h3>
               <p>{mission.text}</p>
             </Reveal>
             <Reveal className="mv-card" delay={90}>
-              <p className="eyebrow eyebrow--plain">Vision</p>
+              <p className="eyebrow eyebrow--plain">چشم‌انداز</p>
               <h3 style={{ marginTop: '0.85rem' }}>{vision.title}</h3>
               <p>{vision.text}</p>
             </Reveal>
@@ -78,15 +79,15 @@ export default function About() {
         <div className="container">
           <SectionHead
             id="values-title"
-            label="Core Values"
-            title="The Principles Behind Every Engagement"
-            text="These are the standards we hold ourselves to, regardless of the size of the engagement."
+            label="ارزش‌های بنیادین"
+            title="اصولی که پشت هر همکاری است"
+            text="این‌ها استانداردهایی هستند که فارغ از اندازه همکاری به آن پایبندیم."
           />
 
           <div className="values-grid">
             {values.map((value, index) => (
               <Reveal key={value.title} className="value-card" delay={index * 50}>
-                <p className="value-card__index">{String(index + 1).padStart(2, '0')}</p>
+                <p className="value-card__index">{faDigits(String(index + 1).padStart(2, '0'))}</p>
                 <h3>{value.title}</h3>
                 <p>{value.text}</p>
               </Reveal>
@@ -99,15 +100,15 @@ export default function About() {
         <div className="container">
           <SectionHead
             id="expertise-title"
-            label="Our Expertise"
-            title="Where We Add the Most Value"
-            text="Depth in the disciplines that determine whether financial information is usable."
+            label="تخصص ما"
+            title="جایی که بیشترین ارزش را می‌آفرینیم"
+            text="عمق تخصص در رشته‌هایی که تعیین می‌کنند اطلاعات مالی قابل استفاده است یا نه."
           />
 
           <div className="expertise-grid">
             {expertise.map((item, index) => (
               <Reveal key={item.title} className="expertise-item" delay={index * 55}>
-                <p className="expertise-item__index">{String(index + 1).padStart(2, '0')}</p>
+                <p className="expertise-item__index">{faDigits(String(index + 1).padStart(2, '0'))}</p>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </Reveal>
@@ -119,7 +120,7 @@ export default function About() {
       <ApproachSection tone="white" />
       <TeamSection tone="ivory" />
 
-      <section className="section section--white" aria-label="Start a conversation">
+      <section className="section section--white" aria-label="شروع گفت‌وگو">
         <div className="container">
           <CtaBand />
         </div>

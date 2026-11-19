@@ -7,27 +7,27 @@ import usePageMeta from '../lib/usePageMeta.js'
 
 export default function Contact() {
   usePageMeta(
-    'Contact — Horizon Financial Services',
-    'Tell us about your business and the financial services you need. Request a consultation with Horizon Financial Services.',
+    'تماس — خدمات مالی افق',
+    'درباره کسب‌وکار و خدمات مالی مورد نیاز خود به ما بگویید. درخواست مشاوره با خدمات مالی افق.',
   )
 
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Let’s Talk About Your Business Finances"
-        text="Tell us about your business and the financial services you need. Our team will get in touch to discuss the next steps."
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Contact' }]}
-        image={{ id: '7534232', alt: 'Contemporary office interior with natural daylight' }}
+        eyebrow="تماس"
+        title="درباره امور مالی کسب‌وکارتان صحبت کنیم"
+        text="درباره کسب‌وکار و خدمات مالی مورد نیاز خود به ما بگویید. تیم ما برای گفت‌وگو درباره گام‌های بعدی با شما تماس خواهد گرفت."
+        breadcrumb={[{ label: 'خانه', to: '/' }, { label: 'تماس' }]}
+        image={{ id: '7534232', alt: 'فضای داخلی دفتر کار مدرن با نور طبیعی روز' }}
       />
 
-      <section className="section section--ivory" aria-label="Contact details and consultation form">
+      <section className="section section--ivory" aria-label="اطلاعات تماس و فرم مشاوره">
         <div className="container contact-grid">
           <Reveal className="contact-details">
             <div className="contact-detail">
               <p className="contact-detail__label">
-                <Pin size={14} style={{ display: 'inline', marginRight: '0.5rem' }} />
-                Office
+                <Pin size={14} style={{ display: 'inline', marginInlineEnd: '0.5rem' }} />
+                دفتر
               </p>
               <address>
                 {site.contact.addressLines.map((line) => (
@@ -41,8 +41,8 @@ export default function Contact() {
 
             <div className="contact-detail">
               <p className="contact-detail__label">
-                <Phone size={14} style={{ display: 'inline', marginRight: '0.5rem' }} />
-                Phone
+                <Phone size={14} style={{ display: 'inline', marginInlineEnd: '0.5rem' }} />
+                تلفن
               </p>
               <p>
                 <a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a>
@@ -51,8 +51,8 @@ export default function Contact() {
 
             <div className="contact-detail">
               <p className="contact-detail__label">
-                <Mail size={14} style={{ display: 'inline', marginRight: '0.5rem' }} />
-                Email
+                <Mail size={14} style={{ display: 'inline', marginInlineEnd: '0.5rem' }} />
+                ایمیل
               </p>
               <p>
                 <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
@@ -61,8 +61,8 @@ export default function Contact() {
 
             <div className="contact-detail">
               <p className="contact-detail__label">
-                <Clock size={14} style={{ display: 'inline', marginRight: '0.5rem' }} />
-                Business Hours
+                <Clock size={14} style={{ display: 'inline', marginInlineEnd: '0.5rem' }} />
+                ساعات کاری
               </p>
               <ul className="hours-list">
                 {site.contact.hours.map((entry) => (
@@ -75,7 +75,7 @@ export default function Contact() {
             </div>
 
             <div className="contact-detail">
-              <p className="contact-detail__label">Follow</p>
+              <p className="contact-detail__label">ما را دنبال کنید</p>
               <ul className="contact-social">
                 {site.social.map((item) => (
                   <li key={item.label}>
@@ -89,31 +89,30 @@ export default function Contact() {
           </Reveal>
 
           <Reveal className="contact-panel" delay={100}>
-            <h2 className="contact-panel__title">Request a Consultation</h2>
+            <h2 className="contact-panel__title">درخواست مشاوره</h2>
             <p className="contact-panel__intro">
-              Complete the form below and we will respond within one business day. All information is
-              treated confidentially.
+              فرم زیر را تکمیل کنید؛ ظرف یک روز کاری پاسخ می‌دهیم. تمام اطلاعات محرمانه تلقی می‌شود.
             </p>
             <ContactForm />
           </Reveal>
         </div>
       </section>
 
-      <section className="section section--white section--tight" aria-label="Response commitment">
+      <section className="section section--white section--tight" aria-label="تعهد پاسخ‌گویی">
         <div className="container">
           <div className="contact-assurance">
             <div>
-              <p className="eyebrow">What Happens Next</p>
+              <p className="eyebrow">بعد از این چه می‌شود</p>
               <h2 style={{ marginTop: '1rem', fontSize: 'clamp(1.4rem, 2.2vw, 1.85rem)' }}>
-                A short, structured first conversation.
+                یک گفت‌وگوی اولیه کوتاه و ساختاریافته.
               </h2>
             </div>
             <div className="contact-assurance__body">
               <p>
-                We reply within one business day to confirm receipt and arrange a time to talk. The
-                first conversation takes about thirty minutes: we ask about your business, your current
-                records and what you need from a financial partner. If we are a good fit, you receive a
-                written scope and fee proposal before any work begins.
+                ظرف یک روز کاری پاسخ می‌دهیم تا دریافت درخواست را تأیید کنیم و زمانی برای گفت‌وگو
+                هماهنگ کنیم. گفت‌وگوی اولیه حدود سی دقیقه طول می‌کشد: درباره کسب‌وکار، سوابق فعلی و
+                آنچه از یک شریک مالی انتظار دارید می‌پرسیم. اگر گزینه مناسبی باشیم، پیش از شروع هر
+                کاری، دامنه و پیشنهاد هزینه به‌صورت مکتوب دریافت می‌کنید.
               </p>
             </div>
           </div>

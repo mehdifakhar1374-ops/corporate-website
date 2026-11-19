@@ -1,82 +1,86 @@
 /**
- * Company details, navigation and contact information.
+ * اطلاعات شرکت، ناوبری و راههای تماس.
  *
- * Everything on the site is driven by the files in `src/content/`.
- * Replace the placeholder contact details below with the firm's real ones —
- * they are deliberately generic until the business supplies its own.
+ * تمام محتوای سایت از فایل‌های پوشه `src/content/` تغذیه می‌شود.
+ * اطلاعات تماس زیر نمونه هستند — پیش از انتشار با اطلاعات واقعی شرکت جایگزین شوند.
  */
 
 export const site = {
-  name: 'Horizon Financial Services',
-  shortName: 'Horizon',
-  legalName: 'Horizon Financial Services',
-  tagline: 'Accounting · Tax · Financial Management',
+  name: 'خدمات مالی افق',
+  shortName: 'افق',
+  legalName: 'خدمات مالی افق',
+  tagline: 'حسابداری · مالیات · مدیریت مالی',
   description:
-    'Professional accounting and financial management services helping businesses build clarity, confidence, and sustainable growth.',
-  founded: 'Est. 2012',
+    'خدمات حرفه‌ای حسابداری و مدیریت مالی که به کسب‌وکارها کمک می‌کند شفافیت، اطمینان و رشد پایدار بسازند.',
+  founded: 'تأسیس ۱۳۹۱',
   nav: [
-    { label: 'Home', to: '/' },
-    { label: 'About Us', to: '/about' },
-    { label: 'Services', to: '/services' },
-    { label: 'Industries', to: '/#industries' },
-    { label: 'Our Approach', to: '/#approach' },
-    { label: 'Our Team', to: '/#team' },
-    { label: 'Contact', to: '/contact' },
+    { label: 'خانه', to: '/' },
+    { label: 'درباره ما', to: '/about' },
+    { label: 'خدمات', to: '/services' },
+    { label: 'صنایع', to: '/#industries' },
+    { label: 'رویکرد ما', to: '/#approach' },
+    { label: 'تیم ما', to: '/#team' },
+    { label: 'تماس', to: '/contact' },
   ],
   footerNav: [
-    { label: 'Home', to: '/' },
-    { label: 'About Us', to: '/about' },
-    { label: 'Services', to: '/services' },
-    { label: 'Industries', to: '/#industries' },
-    { label: 'Our Approach', to: '/#approach' },
-    { label: 'Team', to: '/#team' },
-    { label: 'Insights', to: '/insights' },
-    { label: 'Contact', to: '/contact' },
+    { label: 'خانه', to: '/' },
+    { label: 'درباره ما', to: '/about' },
+    { label: 'خدمات', to: '/services' },
+    { label: 'صنایع', to: '/#industries' },
+    { label: 'رویکرد ما', to: '/#approach' },
+    { label: 'تیم ما', to: '/#team' },
+    { label: 'بینش‌ها', to: '/insights' },
+    { label: 'تماس', to: '/contact' },
   ],
   contact: {
-    // Placeholders — replace with the firm's real details before launch.
-    phone: '+1 (416) 555 0134',
-    phoneHref: '+14165550134',
-    email: 'hello@horizonfinancial.co',
-    addressLines: ['Suite 900, 240 Bay Street', 'Toronto, Ontario M5B 2L7', 'Canada'],
+    // اطلاعات نمونه — پیش از انتشار با اطلاعات واقعی شرکت جایگزین شوند.
+    phone: '۰۲۱ ۸۸۷۷ ۵۵۴۴',
+    phoneHref: '+982188775544',
+    email: 'hello@ofoghfinancial.ir',
+    addressLines: ['میدان ونک، خیابان گاندی جنوبی، پلاک ۱۲', 'طبقه پنجم، تهران', 'ایران'],
     hours: [
-      { days: 'Monday – Friday', time: '09:00 – 18:00' },
-      { days: 'Saturday', time: 'By appointment' },
-      { days: 'Sunday', time: 'Closed' },
+      { days: 'شنبه تا چهارشنبه', time: '۰۹:۰۰ – ۱۸:۰۰' },
+      { days: 'پنجشنبه', time: 'با هماهنگی قبلی' },
+      { days: 'جمعه', time: 'تعطیل' },
     ],
   },
   social: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com' },
-    { label: 'Instagram', href: 'https://www.instagram.com' },
-    { label: 'Facebook', href: 'https://www.facebook.com' },
+    { label: 'لینکدین', href: 'https://www.linkedin.com' },
+    { label: 'اینستاگرام', href: 'https://www.instagram.com' },
+    { label: 'فیسبوک', href: 'https://www.facebook.com' },
   ],
   legalNav: [
-    { label: 'Privacy Policy', to: '/privacy' },
-    { label: 'Terms of Use', to: '/terms' },
+    { label: 'حریم خصوصی', to: '/privacy' },
+    { label: 'شرایط استفاده', to: '/terms' },
   ],
 }
 
 export const hero = {
-  eyebrow: 'Accounting · Tax · Financial Management',
-  title: ['Clarity in Finance.', 'Confidence in Business.'],
-  text: 'Professional accounting and financial management services designed to help businesses operate with confidence, make informed decisions, and build a stronger financial future.',
-  primary: { label: 'Book a Consultation', to: '/contact' },
-  secondary: { label: 'Explore Our Services', to: '/services' },
-  image: { id: '40500557', alt: 'Modern glass towers at dusk in a financial district' },
+  eyebrow: 'حسابداری · مالیات · مدیریت مالی',
+  title: ['شفافیت در امور مالی،', 'اطمینان در کسب‌وکار.'],
+  text: 'خدمات حرفه‌ای حسابداری و مدیریت مالی، طراحی‌شده تا کسب‌وکارها با اطمینان فعالیت کنند، تصمیم‌های آگاهانه بگیرند و آینده مالی قوی‌تری بسازند.',
+  primary: { label: 'مشاوره رزرو کنید', to: '/contact' },
+  secondary: { label: 'خدمات ما را ببینید', to: '/services' },
+  image: { id: '40500557', alt: 'برج‌های شیشه‌ای مدرن در غروب منطقه مالی' },
 }
 
 export const industriesOptions = [
-  'Retail & Commerce',
-  'Professional Services',
-  'Manufacturing',
-  'Construction',
-  'Technology & Startups',
-  'Healthcare & Wellness',
-  'Real Estate',
-  'Hospitality',
-  'Other',
+  'خرده‌فروشی و بازرگانی',
+  'خدمات حرفه‌ای',
+  'تولید و صنعت',
+  'ساختمان و عمران',
+  'فناوری و استارتاپ‌ها',
+  'سلامت و تندرستی',
+  'املاک',
+  'مهمان‌نوایی',
+  'سایر',
 ]
 
-export const companySizes = ['1 – 10 employees', '11 – 50 employees', '51 – 200 employees', '200+ employees']
+export const companySizes = [
+  '۱ تا ۱۰ کارمند',
+  '۱۱ تا ۵۰ کارمند',
+  '۵۱ تا ۲۰۰ کارمند',
+  'بیش از ۲۰۰ کارمند',
+]
 
-export const contactMethods = ['Email', 'Phone', 'Video call']
+export const contactMethods = ['ایمیل', 'تلفن', 'تماس تصویری']

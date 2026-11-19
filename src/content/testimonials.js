@@ -1,31 +1,31 @@
 /**
- * Client testimonials — PLACEHOLDERS.
+ * نظرهای مشتریان — نمونه.
  *
- * These are sample statements used to demonstrate the layout. Replace them
- * with approved client quotes (with written permission) before launch.
+ * این جملات برای نمایش چیدمان استفاده شده‌اند. پیش از انتشار با
+ * نقل‌قول‌های تأییدشده مشتریان (با اجازه کتبی) جایگزین شوند.
  */
 export const testimonialsPlaceholder = true
 
 export const testimonials = [
   {
     quote:
-      'Our reporting went from something we pieced together at year end to a monthly pack we actually use. The difference in how quickly we can answer a lender’s questions is remarkable.',
-    name: 'Client Name',
-    role: 'Managing Director',
-    company: 'Client Company',
+      'گزارش‌های ما از چیزی که پایان سال سرهم می‌کردیم به بسته‌ای ماهانه تبدیل شد که واقعاً از آن استفاده می‌کنیم. تفاوت در سرعتی که می‌توانیم به پرسش‌های وام‌دهنده پاسخ دهیم چشمگیر است.',
+    name: 'نام مشتری',
+    role: 'مدیرعامل',
+    company: 'شرکت مشتری',
   },
   {
     quote:
-      'What we value most is the consistency. Deadlines are met, questions are answered the same day, and nothing arrives as a surprise at filing time.',
-    name: 'Client Name',
-    role: 'Finance Lead',
-    company: 'Client Company',
+      'آنچه بیش از همه برای ما ارزش دارد، یکدستی کار است. مهلت‌ها رعایت می‌شوند، پرسش‌ها همان روز پاسخ می‌گیرند و در زمان اظهارنامه هیچ چیز غافلگیرکننده نیست.',
+    name: 'نام مشتری',
+    role: 'مدیر مالی',
+    company: 'شرکت مشتری',
   },
   {
     quote:
-      'They took over books that were well behind and brought them current without drama. The process was structured from the first meeting.',
-    name: 'Client Name',
-    role: 'Founder',
-    company: 'Client Company',
+      'دفاتری را که خیلی عقب افتاده بود به دست گرفتند و بدون حاشیه به‌روز کردند. فرایند از همان جلسه اول ساختاریافته بود.',
+    name: 'نام مشتری',
+    role: 'بنیان‌گذار',
+    company: 'شرکت مشتری',
   },
 ]

@@ -7,6 +7,13 @@ import { ArrowRight, Check } from './Icons.jsx'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
 const PHONE_RE = /^[+()\d][\d\s().-]{6,24}$/
 
+/** Persian/Arabic-Indic digits typed into the phone field become ASCII digits. */
+function normalizeDigits(value) {
+  return value
+    .replace(/[۰-۹]/g, (digit) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(digit)))
+    .replace(/[٠-٩]/g, (digit) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit)))
+}
+
 const EMPTY = {
   fullName: '',
   company: '',
@@ -15,21 +22,22 @@ const EMPTY = {
   industry: '',
   service: '',
   companySize: '',
-  contactMethod: 'Email',
+  contactMethod: 'ایمیل',
   message: '',
   website: '', // honeypot
 }
 
 function validate(values) {
   const errors = {}
-  if (values.fullName.trim().length < 2) errors.fullName = 'Please enter your full name.'
-  if (!EMAIL_RE.test(values.email.trim())) errors.email = 'Please enter a valid email address.'
-  if (!PHONE_RE.test(values.phone.trim()) || values.phone.replace(/\D/g, '').length < 7) {
-    errors.phone = 'Please enter a valid phone number.'
+  if (values.fullName.trim().length < 2) errors.fullName = 'لطفاً نام و نام خانوادگی خود را وارد کنید.'
+  if (!EMAIL_RE.test(values.email.trim())) errors.email = 'لطفاً یک نشانی ایمیل معتبر وارد کنید.'
+  const phone = normalizeDigits(values.phone.trim())
+  if (!PHONE_RE.test(phone) || phone.replace(/\D/g, '').length < 7) {
+    errors.phone = 'لطفاً یک شماره تلفن معتبر وارد کنید.'
   }
-  if (!values.service) errors.service = 'Please select the service you need.'
+  if (!values.service) errors.service = 'لطفاً خدمت مورد نیاز خود را انتخاب کنید.'
   if (values.message.trim().length < 10) {
-    errors.message = 'Please tell us a little about your requirements.'
+    errors.message = 'لطفاً کمی درباره نیازهای خود توضیح دهید.'
   }
   return errors
 }
@@ -40,7 +48,7 @@ function Field({ id, label, required = false, error, children }) {
       <label className="field__label" htmlFor={id}>
         {label}
         {required && (
-          <abbr title="required" aria-label="required">
+          <abbr title="الزامی" aria-label="الزامی">
             {' '}
             *
           </abbr>
@@ -94,7 +102,7 @@ export default function ContactForm() {
       const response = await fetch('/api/consultations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, phone: normalizeDigits(values.phone) }),
       })
       const data = await response.json().catch(() => ({}))
 
@@ -105,7 +113,7 @@ export default function ContactForm() {
           const firstField = Object.keys(data.errors)[0]
           document.getElementById(firstField)?.focus()
         }
-        setFormError(data.message || 'We could not submit your request. Please try again.')
+        setFormError(data.message || 'درخواست شما ثبت نشد. لطفاً دوباره تلاش کنید.')
         return
       }
 
@@ -114,7 +122,7 @@ export default function ContactForm() {
       setValues(EMPTY)
     } catch {
       setStatus('idle')
-      setFormError('We could not reach the server. Please check your connection and try again.')
+      setFormError('ارتباط با سرور برقرار نشد. لطفاً اتصال خود را بررسی و دوباره تلاش کنید.')
     }
   }
 
@@ -124,12 +132,12 @@ export default function ContactForm() {
         <span className="form-success__icon" aria-hidden="true">
           <Check size={26} />
         </span>
-        <h3>Request received</h3>
+        <h3>درخواست دریافت شد</h3>
         <p>
-          Thank you — your consultation request has been recorded. A member of our team will contact
-          you within one business day using your preferred contact method.
+          سپاسگزاریم — درخواست مشاوره شما ثبت شد. یکی از اعضای تیم ما ظرف یک روز کاری، از طریق
+          روش تماس ترجیحی شما با شما تماس خواهد گرفت.
         </p>
-        {reference && <p className="form-success__ref">Reference {reference}</p>}
+        {reference && <p className="form-success__ref">شماره پیگیری {reference}</p>}
         <div>
           <button
             type="button"
@@ -139,7 +147,7 @@ export default function ContactForm() {
               setReference('')
             }}
           >
-            Send another request
+            ارسال درخواست دیگر
             <ArrowRight size={16} />
           </button>
         </div>
@@ -150,7 +158,7 @@ export default function ContactForm() {
   return (
     <form className="form" onSubmit={onSubmit} noValidate>
       <div className="form__row">
-        <Field id="fullName" label="Full Name" required error={errors.fullName}>
+        <Field id="fullName" label="نام و نام خانوادگی" required error={errors.fullName}>
           <input
             id="fullName"
             name="fullName"
@@ -161,11 +169,11 @@ export default function ContactForm() {
             onChange={update('fullName')}
             aria-invalid={Boolean(errors.fullName)}
             aria-describedby={describedBy('fullName')}
-            placeholder="Your name"
+            placeholder="نام شما"
           />
         </Field>
 
-        <Field id="company" label="Company Name" error={errors.company}>
+        <Field id="company" label="نام شرکت" error={errors.company}>
           <input
             id="company"
             name="company"
@@ -174,13 +182,13 @@ export default function ContactForm() {
             autoComplete="organization"
             value={values.company}
             onChange={update('company')}
-            placeholder="Business name"
+            placeholder="نام کسب‌وکار"
           />
         </Field>
       </div>
 
       <div className="form__row">
-        <Field id="email" label="Email Address" required error={errors.email}>
+        <Field id="email" label="نشانی ایمیل" required error={errors.email}>
           <input
             id="email"
             name="email"
@@ -195,7 +203,7 @@ export default function ContactForm() {
           />
         </Field>
 
-        <Field id="phone" label="Phone Number" required error={errors.phone}>
+        <Field id="phone" label="شماره تلفن" required error={errors.phone}>
           <input
             id="phone"
             name="phone"
@@ -206,13 +214,13 @@ export default function ContactForm() {
             onChange={update('phone')}
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={describedBy('phone')}
-            placeholder="+1 000 000 0000"
+            placeholder="۰۹۱۲ ۰۰۰ ۰۰۰۰"
           />
         </Field>
       </div>
 
       <div className="form__row">
-        <Field id="industry" label="Industry" error={errors.industry}>
+        <Field id="industry" label="صنعت" error={errors.industry}>
           <select
             id="industry"
             name="industry"
@@ -220,7 +228,7 @@ export default function ContactForm() {
             value={values.industry}
             onChange={update('industry')}
           >
-            <option value="">Select an industry</option>
+            <option value="">یک صنعت را انتخاب کنید</option>
             {industriesOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -229,7 +237,7 @@ export default function ContactForm() {
           </select>
         </Field>
 
-        <Field id="service" label="Service Required" required error={errors.service}>
+        <Field id="service" label="خدمت مورد نیاز" required error={errors.service}>
           <select
             id="service"
             name="service"
@@ -239,19 +247,19 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.service)}
             aria-describedby={describedBy('service')}
           >
-            <option value="">Select a service</option>
+            <option value="">یک خدمت را انتخاب کنید</option>
             {services.map((service) => (
               <option key={service.slug} value={service.title}>
                 {service.title}
               </option>
             ))}
-            <option value="Other">Other</option>
+            <option value="سایر">سایر</option>
           </select>
         </Field>
       </div>
 
       <div className="form__row">
-        <Field id="companySize" label="Company Size" error={errors.companySize}>
+        <Field id="companySize" label="اندازه شرکت" error={errors.companySize}>
           <select
             id="companySize"
             name="companySize"
@@ -259,7 +267,7 @@ export default function ContactForm() {
             value={values.companySize}
             onChange={update('companySize')}
           >
-            <option value="">Select company size</option>
+            <option value="">اندازه شرکت را انتخاب کنید</option>
             {companySizes.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -268,7 +276,7 @@ export default function ContactForm() {
           </select>
         </Field>
 
-        <Field id="contactMethod" label="Preferred Contact Method" error={errors.contactMethod}>
+        <Field id="contactMethod" label="روش تماس ترجیحی" error={errors.contactMethod}>
           <select
             id="contactMethod"
             name="contactMethod"
@@ -285,7 +293,7 @@ export default function ContactForm() {
         </Field>
       </div>
 
-      <Field id="message" label="Message" required error={errors.message}>
+      <Field id="message" label="پیام" required error={errors.message}>
         <textarea
           id="message"
           name="message"
@@ -295,12 +303,12 @@ export default function ContactForm() {
           onChange={update('message')}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={describedBy('message')}
-          placeholder="Tell us about your business and the support you are looking for."
+          placeholder="درباره کسب‌وکار خود و پشتیبانی‌ای که به دنبال آن هستید بنویسید."
         />
       </Field>
 
       <div className="hp-field" aria-hidden="true">
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">وب‌سایت</label>
         <input
           id="website"
           name="website"
@@ -323,18 +331,18 @@ export default function ContactForm() {
           {status === 'submitting' ? (
             <>
               <span className="spinner" aria-hidden="true" />
-              Sending
+              در حال ارسال
             </>
           ) : (
             <>
-              Request a Consultation
+              درخواست مشاوره
               <ArrowRight size={16} />
             </>
           )}
         </button>
         <p className="form__note">
-          Your details are used only to respond to this enquiry. See our{' '}
-          <Link to="/privacy">privacy policy</Link>.
+          اطلاعات شما فقط برای پاسخ به این درخواست استفاده می‌شود. <Link to="/privacy">حریم خصوصی</Link> ما
+          را ببینید.
         </p>
       </div>
     </form>

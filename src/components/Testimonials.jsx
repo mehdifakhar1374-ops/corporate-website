@@ -16,7 +16,7 @@ export default function Testimonials() {
       <Quote className="testimonial__mark" aria-hidden="true" />
 
       <div aria-live="polite">
-        <blockquote className="testimonial__quote">“{current.quote}”</blockquote>
+        <blockquote className="testimonial__quote">«{current.quote}»</blockquote>
         <footer className="testimonial__person">
           <span className="testimonial__name">{current.name}</span>
           {current.role} · {current.company}
@@ -24,18 +24,18 @@ export default function Testimonials() {
       </div>
 
       <div className="testimonial__controls">
-        <button type="button" className="control-btn" onClick={() => go(-1)} aria-label="Previous testimonial">
-          <ArrowLeft size={16} />
+        <button type="button" className="control-btn" onClick={() => go(-1)} aria-label="نظر قبلی">
+          <ArrowRight size={16} />
         </button>
 
-        <div className="testimonial__dots" role="group" aria-label="Choose a testimonial">
+        <div className="testimonial__dots" role="group" aria-label="انتخاب یک نظر">
           {testimonials.map((item, dotIndex) => (
             <button
               key={item.quote.slice(0, 24)}
               type="button"
               className="testimonial__dot"
               aria-current={dotIndex === index}
-              aria-label={`Testimonial ${dotIndex + 1} of ${total}`}
+              aria-label={`نظر ${dotIndex + 1} از ${total}`}
               onClick={() => setIndex(dotIndex)}
             >
               <span />
@@ -43,14 +43,14 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <button type="button" className="control-btn" onClick={() => go(1)} aria-label="Next testimonial">
-          <ArrowRight size={16} />
+        <button type="button" className="control-btn" onClick={() => go(1)} aria-label="نظر بعدی">
+          <ArrowLeft size={16} />
         </button>
       </div>
 
       {testimonialsPlaceholder && (
         <p className="placeholder-note">
-          Sample testimonials shown for layout — replace with approved client statements before launch.
+          نظرهای نمایش‌داده‌شده نمونه هستند — پیش از انتشار با جملات تأییدشده مشتریان جایگزین شوند.
         </p>
       )}
     </div>

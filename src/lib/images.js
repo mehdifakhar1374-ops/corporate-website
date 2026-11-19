@@ -10,9 +10,14 @@ export function photoSrcSet(id, widths = [640, 960, 1280, 1600]) {
   return widths.map((width) => `${photoUrl(id, width)} ${width}w`).join(', ')
 }
 
-/** Formats an ISO date for display, e.g. "28 October 2026". */
+/** Converts Latin digits to Persian digits for display. */
+export function faDigits(value) {
+  return String(value).replace(/\d/g, (digit) => '۰۱۲۳۴۵۶۷۸۹'[Number(digit)])
+}
+
+/** Formats an ISO date for display in the Persian calendar, e.g. "۶ آبان ۱۴۰۵". */
 export function formatDate(iso) {
-  return new Intl.DateTimeFormat('en-GB', {
+  return new Intl.DateTimeFormat('fa-IR', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',

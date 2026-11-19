@@ -45,7 +45,7 @@ export default function Header() {
         <div className="container site-header__inner">
           <Logo />
 
-          <nav className="site-nav" aria-label="Primary">
+          <nav className="site-nav" aria-label="ناوبری اصلی">
             <ul className="site-nav__list">
               {site.nav.map((item) =>
                 isHashLink(item.to) ? (
@@ -70,7 +70,7 @@ export default function Header() {
           </nav>
 
           <Button to="/contact" variant="outline-light" className="site-header__cta">
-            Book a Consultation
+            مشاوره رزرو کنید
           </Button>
 
           <button
@@ -78,7 +78,7 @@ export default function Header() {
             className="nav-toggle"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-label={open ? 'بستن منو' : 'باز کردن منو'}
             onClick={() => setOpen((value) => !value)}
           >
             <span className="nav-toggle__bars" aria-hidden="true">
@@ -95,7 +95,7 @@ export default function Header() {
         className={`mobile-menu${open ? ' is-open' : ''}`}
         aria-hidden={!open}
       >
-        <nav aria-label="Mobile">
+        <nav aria-label="منوی موبایل">
           <ul className="mobile-menu__list">
             {site.nav.map((item, index) => (
               <li
@@ -124,7 +124,7 @@ export default function Header() {
 
         <div className="mobile-menu__footer">
           <Button to="/contact" variant="light" onClick={() => setOpen(false)}>
-            Book a Consultation
+            مشاوره رزرو کنید
           </Button>
           <div className="mobile-menu__contact">
             <a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a>

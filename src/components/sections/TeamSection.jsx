@@ -9,9 +9,9 @@ export default function TeamSection({ tone = 'white' }) {
       <div className="container">
         <SectionHead
           id="team-title"
-          label="Our People"
-          title="Meet the Professionals Behind Horizon"
-          text="A small, senior team with clear ownership of every engagement — the person you meet is the person responsible for the work."
+          label="تیم ما"
+          title="با متخصصان پشت افق آشنا شوید"
+          text="تیمی کوچک و باتجربه با مسئولیت روشن در هر همکاری — کسی که می‌بینید، همان کسی است که مسئول کار است."
         />
 
         <div className="team-grid" style={{ marginTop: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
@@ -23,9 +23,9 @@ export default function TeamSection({ tone = 'white' }) {
         </div>
 
         {teamPlaceholder && (
-          <p className="placeholder-note" style={{ textAlign: 'left' }}>
-            Profiles shown are editable placeholders — replace names, roles, portraits and links with
-            your team’s details.
+          <p className="placeholder-note" style={{ textAlign: 'right' }}>
+            پروفایل‌های نمایش‌داده‌شده نمونه و قابل ویرایش هستند — نام‌ها، سمت‌ها، تصاویر و پیوندها را با
+            اطلاعات تیم خود جایگزین کنید.
           </p>
         )}
       </div>

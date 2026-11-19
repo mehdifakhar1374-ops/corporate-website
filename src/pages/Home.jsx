@@ -12,8 +12,8 @@ import usePageMeta from '../lib/usePageMeta.js'
 
 export default function Home() {
   usePageMeta(
-    'Horizon Financial Services — Accounting, Tax & Financial Management',
-    'Professional accounting, tax and financial management services helping businesses build clarity, confidence and sustainable growth.',
+    'خدمات مالی افق — حسابداری، مالیات و مدیریت مالی',
+    'خدمات حرفه‌ای حسابداری، مالیات و مدیریت مالی که به کسب‌وکارها کمک می‌کند شفافیت، اطمینان و رشد پایدار بسازند.',
   )
 
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       <TestimonialsSection />
       <InsightsSection />
 
-      <section className="section section--ivory" aria-label="Start a conversation">
+      <section className="section section--ivory" aria-label="شروع گفت‌وگو">
         <div className="container">
           <CtaBand />
         </div>

@@ -5,34 +5,35 @@ import PageHero from '../components/PageHero.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { articles, categories } from '../content/articles.js'
 import usePageMeta from '../lib/usePageMeta.js'
+import { faDigits } from '../lib/images.js'
 
 export default function Insights() {
   usePageMeta(
-    'Insights & Resources — Horizon Financial Services',
-    'Practical notes on accounting, cash flow, tax compliance, financial planning and reporting for business owners.',
+    'بینش‌ها و منابع — خدمات مالی افق',
+    'یادداشت‌های کاربردی درباره حسابداری، جریان نقدی، انطباق مالیاتی، برنامه‌ریزی مالی و گزارشگری برای صاحبان کسب‌وکار.',
   )
 
-  const [category, setCategory] = useState('All')
+  const [category, setCategory] = useState('همه')
 
   const visible = useMemo(
-    () => (category === 'All' ? articles : articles.filter((article) => article.category === category)),
+    () => (category === 'همه' ? articles : articles.filter((article) => article.category === category)),
     [category],
   )
 
   return (
     <>
       <PageHero
-        eyebrow="Insights & Resources"
-        title="Insights for Better Financial Decisions"
-        text="Short, practical notes on the financial questions we are asked most often — written for owners and managers rather than specialists."
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Insights' }]}
-        image={{ id: '7821708', alt: 'Financial documents reviewed at a desk' }}
+        eyebrow="بینش‌ها و منابع"
+        title="بینش برای تصمیم‌های مالی بهتر"
+        text="یادداشت‌های کوتاه و کاربردی درباره پرسش‌های مالی که بیشتر از ما پرسیده می‌شود — نوشته‌شده برای صاحبان و مدیران کسب‌وکار، نه فقط متخصصان."
+        breadcrumb={[{ label: 'خانه', to: '/' }, { label: 'بینش‌ها' }]}
+        image={{ id: '7821708', alt: 'اسناد مالی در حال بررسی روی میز کار' }}
       />
 
-      <section className="section section--white" aria-label="Articles">
+      <section className="section section--white" aria-label="مقالات">
         <div className="container">
           <div className="section-topline" style={{ alignItems: 'center' }}>
-            <div className="chips" role="group" aria-label="Filter articles by category">
+            <div className="chips" role="group" aria-label="فیلتر مقالات بر اساس دسته">
               {categories.map((item) => (
                 <button
                   key={item}
@@ -46,13 +47,13 @@ export default function Insights() {
               ))}
             </div>
             <p className="muted" aria-live="polite" style={{ fontSize: '0.85rem' }}>
-              {visible.length} {visible.length === 1 ? 'article' : 'articles'}
-              {category !== 'All' ? ` in ${category}` : ''}
+              {faDigits(visible.length)} مقاله
+              {category !== 'همه' ? ` در ${category}` : ''}
             </p>
           </div>
 
           {visible.length === 0 ? (
-            <p className="lead">No articles in this category yet — please check back soon.</p>
+            <p className="lead">هنوز مقاله‌ای در این دسته نیست — به‌زودی دوباره سر بزنید.</p>
           ) : (
             <div className="article-grid">
               {visible.map((article, index) => (
@@ -65,11 +66,11 @@ export default function Insights() {
         </div>
       </section>
 
-      <section className="section section--ivory" aria-label="Start a conversation">
+      <section className="section section--ivory" aria-label="شروع گفت‌وگو">
         <div className="container">
           <CtaBand
-            title="Have a Question We Have Not Covered?"
-            text="Every business is different. If something here does not match your situation, a short conversation usually clarifies it."
+            title="پرسشی دارید که به آن نپرداخته‌ایم؟"
+            text="هر کسب‌وکاری متفاوت است. اگر چیزی در اینجا با وضعیت شما هم‌خوان نیست، یک گفت‌وگوی کوتاه معمولاً آن را روشن می‌کند."
           />
         </div>
       </section>

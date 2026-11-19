@@ -14,7 +14,7 @@ export default function WhySection() {
           </h2>
           <p>{why.text}</p>
           <Button to="/contact" variant="gold" icon={<ArrowRight size={16} />}>
-            Book a Consultation
+            مشاوره رزرو کنید
           </Button>
         </Reveal>
 

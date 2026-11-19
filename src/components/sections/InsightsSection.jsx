@@ -12,12 +12,12 @@ export default function InsightsSection() {
         <div className="section-topline">
           <SectionHead
             id="insights-title"
-            label="Insights & Resources"
-            title="Insights for Better Financial Decisions"
-            text="Practical notes on accounting, cash flow, compliance and reporting — written for business owners rather than specialists."
+            label="بینش‌ها و منابع"
+            title="بینش برای تصمیم‌های مالی بهتر"
+            text="یادداشت‌های کاربردی درباره حسابداری، جریان نقدی، انطباق و گزارشگری — نوشته‌شده برای صاحبان کسب‌وکار، نه فقط متخصصان."
           />
           <Link className="link-arrow" to="/insights">
-            All Insights
+            همه مقالات
             <ArrowRight size={16} />
           </Link>
         </div>

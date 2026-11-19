@@ -32,8 +32,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <a className="hero__scroll" href="#about" aria-label="Continue to the about section">
-        Scroll
+      <a className="hero__scroll" href="#about" aria-label="رفتن به بخش درباره ما">
+        ادامه
         <span aria-hidden="true" />
       </a>
     </section>

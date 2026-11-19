@@ -8,15 +8,16 @@ import ApproachSection from '../components/sections/ApproachSection.jsx'
 import { Check } from '../components/Icons.jsx'
 import { getService, services } from '../content/services.js'
 import usePageMeta from '../lib/usePageMeta.js'
+import { faDigits } from '../lib/images.js'
 import NotFound from './NotFound.jsx'
 
 const CTA_LABELS = {
-  'accounting-bookkeeping': 'Discuss Your Accounting Needs',
-  'financial-management': 'Discuss Your Financial Management Needs',
-  'tax-consulting': 'Discuss Your Tax Requirements',
-  'payroll-services': 'Discuss Your Payroll Needs',
-  'financial-reporting': 'Discuss Your Reporting Needs',
-  'business-consulting': 'Discuss Your Business Plans',
+  'accounting-bookkeeping': 'درباره نیازهای حسابداری خود صحبت کنیم',
+  'financial-management': 'درباره نیازهای مدیریت مالی خود صحبت کنیم',
+  'tax-consulting': 'درباره نیازهای مالیاتی خود صحبت کنیم',
+  'payroll-services': 'درباره نیازهای حقوق و دستمزد صحبت کنیم',
+  'financial-reporting': 'درباره نیازهای گزارشگری خود صحبت کنیم',
+  'business-consulting': 'درباره برنامه‌های کسب‌وکار خود صحبت کنیم',
 }
 
 export default function ServiceDetail() {
@@ -24,7 +25,7 @@ export default function ServiceDetail() {
   const service = getService(slug)
 
   usePageMeta(
-    service ? `${service.title} — Horizon Financial Services` : 'Service not found',
+    service ? `${service.title} — خدمات مالی افق` : 'خدمت یافت نشد',
     service?.short,
   )
 
@@ -35,13 +36,13 @@ export default function ServiceDetail() {
   return (
     <>
       <PageHero
-        eyebrow={`Service ${service.index}`}
+        eyebrow={`خدمت ${service.index}`}
         title={service.headline}
         text={service.intro}
         image={service.image}
         breadcrumb={[
-          { label: 'Home', to: '/' },
-          { label: 'Services', to: '/services' },
+          { label: 'خانه', to: '/' },
+          { label: 'خدمات', to: '/services' },
           { label: service.title },
         ]}
       />
@@ -49,7 +50,7 @@ export default function ServiceDetail() {
       <section className="section section--white" aria-labelledby="overview-title">
         <div className="container detail-cols">
           <Reveal>
-            <p className="eyebrow">Overview</p>
+            <p className="eyebrow">مرور کلی</p>
             <h2 id="overview-title" style={{ marginTop: '1.1rem' }}>
               {service.title}
             </h2>
@@ -66,15 +67,15 @@ export default function ServiceDetail() {
         <div className="container">
           <SectionHead
             id="scope-title"
-            label="Scope of Services"
-            title="What the Engagement Covers"
-            text="The specific scope is agreed in writing before work begins, so responsibilities and deliverables are clear on both sides."
+            label="دامنه خدمات"
+            title="همکاری چه چیزهایی را پوشش می‌دهد"
+            text="دامنه دقیق پیش از شروع کار به‌صورت مکتوب توافق می‌شود تا مسئولیت‌ها و خروجی‌ها برای هر دو طرف روشن باشد."
           />
 
           <div className="scope-grid">
             {service.scope.map((item, index) => (
               <Reveal key={item.title} className="scope-item" delay={index * 45}>
-                <p className="scope-item__index">{String(index + 1).padStart(2, '0')}</p>
+                <p className="scope-item__index">{faDigits(String(index + 1).padStart(2, '0'))}</p>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </Reveal>
@@ -86,9 +87,9 @@ export default function ServiceDetail() {
       <section className="section section--white" aria-labelledby="benefits-title">
         <div className="container detail-cols">
           <Reveal>
-            <p className="eyebrow">Benefits</p>
+            <p className="eyebrow">مزایا</p>
             <h2 id="benefits-title" style={{ marginTop: '1.1rem' }}>
-              What It Changes
+              چه چیزی تغییر می‌کند
             </h2>
             <ul className="check-list">
               {service.benefits.map((benefit) => (
@@ -103,8 +104,8 @@ export default function ServiceDetail() {
           </Reveal>
 
           <Reveal delay={90}>
-            <p className="eyebrow">Typical Requirements</p>
-            <h2 style={{ marginTop: '1.1rem' }}>What We Need From You</h2>
+            <p className="eyebrow">نیازمندی‌های معمول</p>
+            <h2 style={{ marginTop: '1.1rem' }}>آنچه از شما نیاز داریم</h2>
             <ul className="check-list check-list--quiet">
               {service.clientNeeds.map((need) => (
                 <li key={need}>
@@ -124,12 +125,12 @@ export default function ServiceDetail() {
       <section className="section section--white" aria-labelledby="faq-title">
         <div className="container detail-cols">
           <Reveal>
-            <p className="eyebrow">FAQ</p>
+            <p className="eyebrow">پرسش‌های متداول</p>
             <h2 id="faq-title" style={{ marginTop: '1.1rem' }}>
-              Common Questions
+              پرسش‌های رایج
             </h2>
             <p className="lead" style={{ marginTop: '1rem' }}>
-              Anything else you would like to ask? We are happy to talk it through.
+              پرسش دیگری دارید؟ خوشحال می‌شویم درباره آن گفت‌وگو کنیم.
             </p>
           </Reveal>
 
@@ -149,7 +150,7 @@ export default function ServiceDetail() {
 
       <section className="section section--ivory" aria-labelledby="related-title">
         <div className="container">
-          <SectionHead id="related-title" label="Related Services" title="Continue Exploring" />
+          <SectionHead id="related-title" label="خدمات مرتبط" title="ادامه کاوش" />
 
           <div className="related-grid">
             {related.map((item, index) => (
@@ -174,17 +175,17 @@ export default function ServiceDetail() {
 
           <p style={{ marginTop: '2rem' }}>
             <Link className="link-arrow" to="/services">
-              View all services
+              مشاهده همه خدمات
             </Link>
           </p>
         </div>
       </section>
 
-      <section className="section section--white" aria-label="Start a conversation">
+      <section className="section section--white" aria-label="شروع گفت‌وگو">
         <div className="container">
           <CtaBand
-            title={CTA_LABELS[service.slug] || 'Discuss Your Requirements'}
-            text="Share a little about your business and we will come back with a clear, written scope and next steps."
+            title={CTA_LABELS[service.slug] || 'درباره نیازهای خود صحبت کنیم'}
+            text="کمی درباره کسب‌وکار خود بگویید تا با دامنه و گام‌های بعدی روشن و مکتوب بازگردیم."
           />
         </div>
       </section>

@@ -3,9 +3,9 @@ import Reveal from './Reveal.jsx'
 import { ArrowRight, Trend } from './Icons.jsx'
 
 export default function CtaBand({
-  title = 'Ready to Bring More Clarity to Your Business Finances?',
-  text = "Let's discuss your accounting and financial management needs and find the right way forward.",
-  actionLabel = 'Book a Consultation',
+  title = 'آماده‌اید شفافیت بیشتری به امور مالی کسب‌وکارتان بیاورید؟',
+  text = 'درباره نیازهای حسابداری و مدیریت مالی خود صحبت کنیم و مسیر درست را پیدا کنیم.',
+  actionLabel = 'مشاوره رزرو کنید',
   actionTo = '/contact',
 }) {
   return (

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { site } from '../content/site.js'
 import { services } from '../content/services.js'
 import { ArrowRight } from './Icons.jsx'
+import { faDigits } from '../lib/images.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
 
@@ -26,7 +27,7 @@ export function NewsletterForm() {
     event.preventDefault()
     if (!EMAIL_RE.test(email.trim())) {
       setError(true)
-      setMessage('Please enter a valid email address.')
+      setMessage('لطفاً یک نشانی ایمیل معتبر وارد کنید.')
       return
     }
 
@@ -45,7 +46,7 @@ export function NewsletterForm() {
       if (!response.ok) {
         setStatus('idle')
         setError(true)
-        setMessage(data.message || 'Subscription failed. Please try again.')
+        setMessage(data.message || 'عضویت انجام نشد. لطفاً دوباره تلاش کنید.')
         return
       }
 
@@ -53,20 +54,20 @@ export function NewsletterForm() {
       setEmail('')
       setMessage(
         data.alreadySubscribed
-          ? 'You are already on the list — thank you.'
-          : 'Thank you. You are subscribed to Horizon insights.',
+          ? 'شما پیش‌تر در فهرست هستید — سپاسگزاریم.'
+          : 'سپاسگزاریم. عضویت شما در خبرنامه افق ثبت شد.',
       )
     } catch {
       setStatus('idle')
       setError(true)
-      setMessage('We could not reach the server. Please try again.')
+      setMessage('ارتباط با سرور برقرار نشد. لطفاً دوباره تلاش کنید.')
     }
   }
 
   return (
     <form className="newsletter__form" onSubmit={onSubmit} noValidate>
       <label className="sr-only" htmlFor={inputId}>
-        Email address for the Horizon newsletter
+        نشانی ایمیل برای خبرنامه افق
       </label>
       <input
         id={inputId}
@@ -74,7 +75,7 @@ export function NewsletterForm() {
         type="email"
         name="email"
         autoComplete="email"
-        placeholder="Email address"
+        placeholder="نشانی ایمیل"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         aria-invalid={error}
@@ -84,7 +85,7 @@ export function NewsletterForm() {
       <button
         type="submit"
         className="newsletter__submit"
-        aria-label="Subscribe to the newsletter"
+        aria-label="عضویت در خبرنامه"
         disabled={status === 'sending'}
       >
         {status === 'sending' ? <span className="spinner" aria-hidden="true" /> : <ArrowRight size={16} />}
@@ -110,21 +111,21 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="newsletter">
-            <p className="newsletter__label">Newsletter</p>
+            <p className="newsletter__label">خبرنامه</p>
             <p className="newsletter__text">
-              Receive practical financial insights and business updates.
+              بینش‌های کاربردی مالی و تازه‌ترین اخبار کسب‌وکار را دریافت کنید.
             </p>
             <NewsletterForm />
           </div>
 
-          <ul className="footer-social" aria-label="Horizon on social media">
+          <ul className="footer-social" aria-label="افق در شبکه‌های اجتماعی">
             {site.social.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${item.label} (opens in a new tab)`}
+                  aria-label={`${item.label} (در برگه جدید باز می‌شود)`}
                 >
                   {item.label}
                 </a>
@@ -135,12 +136,12 @@ export default function Footer() {
 
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            <p className="footer-col__title">Horizon Financial Services</p>
+            <p className="footer-col__title">{site.name}</p>
             <p>{site.description}</p>
           </div>
 
-          <nav aria-label="Footer navigation">
-            <p className="footer-col__title">Navigation</p>
+          <nav aria-label="ناوبری پانوشت">
+            <p className="footer-col__title">ناوبری</p>
             <ul className="footer-links">
               {site.footerNav.map((item) => (
                 <li key={item.to}>
@@ -150,8 +151,8 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Services">
-            <p className="footer-col__title">Services</p>
+          <nav aria-label="خدمات">
+            <p className="footer-col__title">خدمات</p>
             <ul className="footer-links">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -162,7 +163,7 @@ export default function Footer() {
           </nav>
 
           <div>
-            <p className="footer-col__title">Contact</p>
+            <p className="footer-col__title">تماس</p>
             <div className="footer-contact">
               <a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a>
               <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
@@ -182,7 +183,7 @@ export default function Footer() {
       <div className="container">
         <div className="site-footer__bottom">
           <p>
-            © {year} {site.legalName}. All rights reserved.
+            © {faDigits(year)} {site.legalName}. تمامی حقوق محفوظ است.
           </p>
           <div className="site-footer__legal">
             {site.legalNav.map((item) => (
@@ -195,7 +196,7 @@ export default function Footer() {
       </div>
 
       <span className="site-footer__watermark" aria-hidden="true">
-        Horizon
+        افق
       </span>
     </footer>
   )

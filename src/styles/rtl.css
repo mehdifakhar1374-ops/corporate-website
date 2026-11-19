@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Persian (fa) right-to-left overrides
+   --------------------------------------------------------------------------
+   The site is Persian and runs with <html lang="fa" dir="rtl">. CSS Grid and
+   flexbox already follow the writing direction, so this file only mirrors the
+   handful of physical properties (left/right, translateX) and tunes the
+   typography for Arabic script, where negative tracking and wide letter
+   spacing break the cursive joins.
+   ========================================================================== */
+
+/* ----------------------------------------------------------- Typography -- */
+[dir='rtl'] :is(h1, h2, h3, h4) {
+  letter-spacing: 0;
+  line-height: 1.38;
+}
+
+[dir='rtl'] h1 {
+  font-size: clamp(2.15rem, 4.4vw, 3.5rem);
+}
+
+[dir='rtl'] h2 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+[dir='rtl'] :is(
+  .testimonial__quote,
+  .prose h2,
+  .article-card__title,
+  .service-card__title,
+  .service-row__title,
+  .team-card__name,
+  .industry__name,
+  .mobile-menu__link
+) {
+  letter-spacing: 0;
+}
+
+/* Tracked uppercase labels: keep the style, drop the tracking. */
+[dir='rtl'] :is(
+  .eyebrow,
+  .btn,
+  .link-arrow,
+  .site-nav__link,
+  .brand__name,
+  .brand__sub,
+  .footer-col__title,
+  .footer-social a,
+  .newsletter__label,
+  .field__label,
+  .service-row__index,
+  .service-card__index,
+  .scope-item__index,
+  .related-card__index,
+  .expertise-item__index,
+  .value-card__index,
+  .why-item__index,
+  .approach-step__number,
+  .industry__index,
+  .article-card__meta,
+  .team-card__role,
+  .contact-detail__label,
+  .page-hero__meta,
+  .breadcrumb,
+  .placeholder-note,
+  .form-success__ref,
+  .hero__scroll,
+  .skip-link,
+  .chip,
+  .team-card__link,
+  .service-preview__caption
+) {
+  letter-spacing: normal;
+}
+
+/* Persian labels read better a little larger than the tracked English ones. */
+[dir='rtl'] .eyebrow {
+  font-size: 0.8rem;
+}
+
+[dir='rtl'] :is(.btn, .link-arrow) {
+  font-size: 0.88rem;
+}
+
+[dir='rtl'] .site-nav__link {
+  font-size: 0.86rem;
+}
+
+[dir='rtl'] .field__label {
+  font-size: 0.8rem;
+}
+
+[dir='rtl'] .brand__name {
+  font-size: 1.05rem;
+}
+
+[dir='rtl'] .brand__sub {
+  font-size: 0.62rem;
+}
+
+[dir='rtl'] :is(.page-hero__meta, .breadcrumb) {
+  font-size: 0.78rem;
+}
+
+[dir='rtl'] .footer-col__title {
+  font-size: 0.8rem;
+}
+
+[dir='rtl'] .article-card__meta {
+  font-size: 0.78rem;
+}
+
+[dir='rtl'] .contact-detail__label {
+  font-size: 0.78rem;
+}
+
+[dir='rtl'] .team-card__role {
+  font-size: 0.78rem;
+}
+
+[dir='rtl'] .chip {
+  font-size: 0.8rem;
+}
+
+[dir='rtl'] .hero__title {
+  font-size: clamp(2.05rem, 5vw, 4.1rem);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+/* ------------------------------------------------------------ Direction -- */
+[dir='rtl'] .skip-link {
+  left: auto;
+  right: 0.75rem;
+}
+
+[dir='rtl'] .nav-toggle {
+  margin-right: 0;
+  margin-left: -0.5rem;
+}
+
+/* Nav underline grows from the reading start (the right). */
+[dir='rtl'] .site-nav__link::after {
+  left: auto;
+  right: 0;
+  transform-origin: right;
+}
+
+/* Service rows: accent rule and hover slide mirror to the right. */
+[dir='rtl'] .service-row::before {
+  left: auto;
+  right: calc(var(--gutter) * -0.5);
+}
+
+[dir='rtl'] .service-row__arrow svg {
+  transform: scaleX(-1);
+}
+
+[dir='rtl'] :is(.service-row:hover, .service-row:focus-visible) .service-row__arrow {
+  transform: translateX(-6px);
+}
+
+/* Inline arrow icons point toward the reading direction (left in RTL). */
+[dir='rtl'] :is(.btn, .link-arrow, .newsletter__submit, .about-media__badge) svg {
+  transform: scaleX(-1);
+}
+
+[dir='rtl'] .btn:hover svg {
+  transform: translateX(-4px) scaleX(-1);
+}
+
+[dir='rtl'] .link-arrow:hover svg {
+  transform: translateX(-5px) scaleX(-1);
+}
+
+/* About collage mirrors its composition. */
+[dir='rtl'] .about-media__main {
+  right: auto;
+  left: 0;
+}
+
+[dir='rtl'] .about-media__detail {
+  left: auto;
+  right: 0;
+}
+
+[dir='rtl'] .about-media__badge {
+  right: auto;
+  left: 8%;
+}
+
+/* Footer watermark sits on the opposite corner. */
+[dir='rtl'] .site-footer__watermark {
+  right: auto;
+  left: -1rem;
+}
+
+/* Native select chevron moves to the inline-end side (left). */
+[dir='rtl'] .select {
+  background-position: left 0.15rem center;
+  padding-right: 0;
+  padding-left: 1.75rem;
+}
+
+/* Article and legal list markers sit on the right. */
+[dir='rtl'] :is(.prose li, .legal-body li) {
+  padding-left: 0;
+  padding-right: 1.4rem;
+}
+
+[dir='rtl'] .legal-body li {
+  padding-right: 1.25rem;
+}
+
+[dir='rtl'] :is(.prose li, .legal-body li)::before {
+  left: auto;
+  right: 0;
+}
+
+[dir='rtl'] .prose blockquote {
+  padding-left: 0;
+  padding-right: 1.5rem;
+  border-left: 0;
+  border-right: 1px solid var(--gold-line);
+}
+
+/* Social labels are Persian words, so the 44px circles become compact pills. */
+[dir='rtl'] .footer-social a {
+  min-width: 44px;
+  padding-inline: 0.85rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+}
+
+/* --------------------------------------------------------- Breakpoints -- */
+@media (max-width: 640px) {
+  [dir='rtl'] .about-media__badge {
+    right: auto;
+    left: 4%;
+  }
+
+  [dir='rtl'] .service-row::before {
+    left: auto;
+    right: -0.75rem;
+  }
+}

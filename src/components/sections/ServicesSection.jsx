@@ -12,12 +12,12 @@ export default function ServicesSection() {
         <div className="section-topline">
           <SectionHead
             id="services-title"
-            label="What We Do"
-            title="Comprehensive Financial Services"
-            text="From daily accounting operations to strategic financial consulting, we provide the expertise businesses need to manage their finances with confidence."
+            label="آنچه انجام می‌دهیم"
+            title="خدمات مالی جامع"
+            text="از عملیات روزانه حسابداری تا مشاوره مالی راهبردی؛ تخصصی را فراهم می‌کنیم که کسب‌وکارها برای مدیریت مطمئن امور مالی خود نیاز دارند."
           />
           <Link className="link-arrow" to="/services">
-            All Services
+            همه خدمات
             <ArrowRight size={16} />
           </Link>
         </div>

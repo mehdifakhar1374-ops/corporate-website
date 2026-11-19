@@ -15,7 +15,7 @@ export default function Article() {
   const article = getArticle(slug)
 
   usePageMeta(
-    article ? `${article.title} — Horizon Financial Services` : 'Article not found',
+    article ? `${article.title} — خدمات مالی افق` : 'مقاله یافت نشد',
     article?.excerpt,
   )
 
@@ -32,8 +32,8 @@ export default function Article() {
         eyebrow={article.category}
         title={article.title}
         breadcrumb={[
-          { label: 'Home', to: '/' },
-          { label: 'Insights', to: '/insights' },
+          { label: 'خانه', to: '/' },
+          { label: 'بینش‌ها', to: '/insights' },
           { label: article.category },
         ]}
         meta={
@@ -77,11 +77,11 @@ export default function Article() {
         <div className="article-footer">
           <p className="article-author">
             <strong>{article.author}</strong>
-            Horizon Financial Services
+            خدمات مالی افق
           </p>
           <Link className="link-arrow" to="/insights">
             <ArrowLeft size={16} />
-            All Insights
+            همه مقالات
           </Link>
         </div>
       </div>
@@ -89,7 +89,7 @@ export default function Article() {
       <section className="section section--ivory" aria-labelledby="related-articles-title">
         <div className="container">
           <h2 id="related-articles-title" style={{ marginBottom: 'clamp(2rem, 3vw, 2.75rem)' }}>
-            Related Reading
+            مطالب مرتبط
           </h2>
           <div className="article-grid">
             {related.map((item, index) => (
@@ -101,7 +101,7 @@ export default function Article() {
         </div>
       </section>
 
-      <section className="section section--white" aria-label="Start a conversation">
+      <section className="section section--white" aria-label="شروع گفت‌وگو">
         <div className="container">
           <CtaBand />
         </div>

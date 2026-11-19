@@ -1,39 +1,39 @@
 /**
- * Team profiles.
+ * معرفی اعضای تیم.
  *
- * These are EDITORIAL PLACEHOLDERS. Replace names, roles, biographies,
- * portraits and links with the firm's real team before launch. The site
- * labels the section accordingly while `placeholder` is true.
+ * این موارد نمونه تحریری هستند. پیش از انتشار نام‌ها، سمت‌ها،
+ * زندگینامه‌ها، تصاویر و پیوندها با تیم واقعی شرکت جایگزین شوند.
+ * تا زمانی که `placeholder` درست باشد، سایت این بخش را بر همین اساس برچسب می‌زند.
  */
 export const teamPlaceholder = true
 
 export const team = [
   {
-    name: 'Daniel Morgan',
-    role: 'Managing Director',
-    bio: 'Leads client engagements and financial strategy work, with a focus on long-term planning for owner-managed businesses.',
-    image: { id: '7580763', alt: 'Portrait of a financial adviser in a navy suit by an office window' },
+    name: 'آرش محمدی',
+    role: 'مدیرعامل',
+    bio: 'رهبری همکاری با مشتریان و کارهای راهبردی مالی، با تمرکز بر برنامه‌ریزی بلندمدت برای کسب‌وکارهای تحت مالکیت مدیران.',
+    image: { id: '7580763', alt: 'پرتره یک مشاور مالی با کت و شلوار سرمه‌ای کنار پنجره دفتر' },
     linkedin: 'https://www.linkedin.com',
   },
   {
-    name: 'Olivia Carter',
-    role: 'Senior Accounting Specialist',
-    bio: 'Oversees accounting operations, reconciliations and month-end close across the firm’s recurring client portfolio.',
-    image: { id: '7648247', alt: 'Portrait of an accounting specialist in a blazer in an office' },
+    name: 'نگار رستمی',
+    role: 'کارشناس ارشد حسابداری',
+    bio: 'نظارت بر عملیات حسابداری، تطبیق حساب‌ها و بستن پایان ماه در پرتفوی مشتریان مستمر شرکت.',
+    image: { id: '7648247', alt: 'پرتره یک کارشناس حسابداری با کت در دفتر کار' },
     linkedin: 'https://www.linkedin.com',
   },
   {
-    name: 'James Wilson',
-    role: 'Financial Consultant',
-    bio: 'Works with management teams on budgeting, cash flow forecasting and performance reporting.',
-    image: { id: '34687888', alt: 'Portrait of a financial consultant in a navy suit' },
+    name: 'کامران یوسفی',
+    role: 'مشاور مالی',
+    bio: 'همکاری با تیم‌های مدیریتی در بودجه‌بندی، پیش‌بینی جریان نقدی و گزارشگری عملکرد.',
+    image: { id: '34687888', alt: 'پرتره یک مشاور مالی با کت و شلوار سرمه‌ای' },
     linkedin: 'https://www.linkedin.com',
   },
   {
-    name: 'Sophia Bennett',
-    role: 'Tax & Compliance Specialist',
-    bio: 'Maintains compliance calendars and prepares the records behind each filing and statutory obligation.',
-    image: { id: '3867839', alt: 'Portrait of a compliance specialist in a dark blazer' },
+    name: 'سارا بهرامی',
+    role: 'کارشناس مالیات و انطباق',
+    bio: 'نگهداری تقویم انطباق و تهیه سوابق پشت هر اظهارنامه و تعهد قانونی.',
+    image: { id: '3867839', alt: 'پرتره یک کارشناس انطباق با کت تیره' },
     linkedin: 'https://www.linkedin.com',
   },
 ]

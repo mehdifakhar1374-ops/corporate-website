@@ -8,7 +8,7 @@ export default function PageHero({ eyebrow, title, text, image, breadcrumb, meta
     <header className={`page-hero${image ? ' page-hero--image' : ''}`} style={style}>
       <div className="container">
         {breadcrumb && breadcrumb.length > 0 && (
-          <nav className="breadcrumb" aria-label="Breadcrumb">
+          <nav className="breadcrumb" aria-label="مسیر صفحه">
             {breadcrumb.map((item, index) => (
               <span key={`${item.label}-${index}`}>
                 {item.to ? <Link to={item.to}>{item.label}</Link> : <span aria-current="page">{item.label}</span>}

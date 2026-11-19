@@ -58,6 +58,12 @@ const PHONE_RE = /^[+()\d][\d\s().-]{6,24}$/
 const clean = (value, max = 400) =>
   typeof value === 'string' ? value.trim().slice(0, max) : ''
 
+// Persian/Arabic-Indic digits become ASCII so phone validation is consistent.
+const normalizeDigits = (value) =>
+  value
+    .replace(/[۰-۹]/g, (digit) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(digit)))
+    .replace(/[٠-٩]/g, (digit) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit)))
+
 function reference() {
   const stamp = Date.now().toString(36).toUpperCase().slice(-5)
   const rand = Math.random().toString(36).toUpperCase().slice(2, 5)
@@ -95,7 +101,7 @@ app.post('/api/consultations', async (req, res) => {
   if (throttled(req.ip)) {
     return res.status(429).json({
       ok: false,
-      message: 'We have just received a request from this connection. Please try again in a moment.',
+      message: 'همین حالا درخواستی از این اتصال دریافت کرده‌ایم. لطفاً کمی بعد دوباره تلاش کنید.',
     })
   }
 
@@ -103,7 +109,7 @@ app.post('/api/consultations', async (req, res) => {
     fullName: clean(body.fullName, 120),
     company: clean(body.company, 160),
     email: clean(body.email, 160),
-    phone: clean(body.phone, 40),
+    phone: normalizeDigits(clean(body.phone, 40)),
     industry: clean(body.industry, 80),
     service: clean(body.service, 80),
     companySize: clean(body.companySize, 40),
@@ -112,18 +118,18 @@ app.post('/api/consultations', async (req, res) => {
   }
 
   const errors = {}
-  if (payload.fullName.length < 2) errors.fullName = 'Please enter your full name.'
-  if (!EMAIL_RE.test(payload.email)) errors.email = 'Please enter a valid email address.'
+  if (payload.fullName.length < 2) errors.fullName = 'لطفاً نام و نام خانوادگی خود را وارد کنید.'
+  if (!EMAIL_RE.test(payload.email)) errors.email = 'لطفاً یک نشانی ایمیل معتبر وارد کنید.'
   if (!PHONE_RE.test(payload.phone) || payload.phone.replace(/\D/g, '').length < 7) {
-    errors.phone = 'Please enter a valid phone number.'
+    errors.phone = 'لطفاً یک شماره تلفن معتبر وارد کنید.'
   }
-  if (!payload.service) errors.service = 'Please select the service you need.'
+  if (!payload.service) errors.service = 'لطفاً خدمت مورد نیاز خود را انتخاب کنید.'
   if (payload.message.length < 10) {
-    errors.message = 'Please tell us a little about your requirements.'
+    errors.message = 'لطفاً کمی درباره نیازهای خود توضیح دهید.'
   }
 
   if (Object.keys(errors).length) {
-    return res.status(422).json({ ok: false, errors, message: 'Please review the highlighted fields.' })
+    return res.status(422).json({ ok: false, errors, message: 'لطفاً فیلدهای مشخص‌شده را بررسی کنید.' })
   }
 
   const record = {
@@ -138,7 +144,7 @@ app.post('/api/consultations', async (req, res) => {
     console.error('[consultations] failed to persist request', error)
     return res.status(500).json({
       ok: false,
-      message: 'We could not record your request. Please try again or email us directly.',
+      message: 'درخواست شما ثبت نشد. لطفاً دوباره تلاش کنید یا مستقیماً برای ما ایمیل بفرستید.',
     })
   }
 
@@ -149,7 +155,7 @@ app.post('/api/consultations', async (req, res) => {
 app.post('/api/newsletter', async (req, res) => {
   const email = clean((req.body || {}).email, 160).toLowerCase()
   if (!EMAIL_RE.test(email)) {
-    return res.status(422).json({ ok: false, message: 'Please enter a valid email address.' })
+    return res.status(422).json({ ok: false, message: 'لطفاً یک نشانی ایمیل معتبر وارد کنید.' })
   }
 
   try {
@@ -166,12 +172,12 @@ app.post('/api/newsletter', async (req, res) => {
     return res.status(201).json({ ok: true })
   } catch (error) {
     console.error('[newsletter] failed to persist subscriber', error)
-    return res.status(500).json({ ok: false, message: 'Subscription failed. Please try again.' })
+    return res.status(500).json({ ok: false, message: 'عضویت انجام نشد. لطفاً دوباره تلاش کنید.' })
   }
 })
 
 app.use('/api', (_req, res) => {
-  res.status(404).json({ ok: false, message: 'Not found' })
+  res.status(404).json({ ok: false, message: 'یافت نشد' })
 })
 
 /* Optional: serve the production build when one exists. */

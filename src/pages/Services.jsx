@@ -9,21 +9,21 @@ import usePageMeta from '../lib/usePageMeta.js'
 
 export default function Services() {
   usePageMeta(
-    'Services — Horizon Financial Services',
-    'Accounting and bookkeeping, financial management, tax consulting, payroll, financial reporting and business consulting services.',
+    'خدمات — خدمات مالی افق',
+    'خدمات حسابداری و دفترداری، مدیریت مالی، مشاوره مالیاتی، حقوق و دستمزد، گزارشگری مالی و مشاوره کسب‌وکار.',
   )
 
   return (
     <>
       <PageHero
-        eyebrow="Our Services"
-        title="Comprehensive Financial Services"
-        text="From daily accounting operations to strategic financial consulting, we provide the expertise businesses need to manage their finances with confidence."
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Services' }]}
-        image={{ id: '11861957', alt: 'Curved glass façade of a modern office building' }}
+        eyebrow="خدمات ما"
+        title="خدمات مالی جامع"
+        text="از عملیات روزانه حسابداری تا مشاوره مالی راهبردی؛ تخصصی را فراهم می‌کنیم که کسب‌وکارها برای مدیریت مطمئن امور مالی خود نیاز دارند."
+        breadcrumb={[{ label: 'خانه', to: '/' }, { label: 'خدمات' }]}
+        image={{ id: '11861957', alt: 'نمای شیشه‌ای منحنی یک ساختمان اداری مدرن' }}
       />
 
-      <section className="section section--white" aria-label="Service catalogue">
+      <section className="section section--white" aria-label="فهرست خدمات">
         <div className="container">
           <div className="service-cards">
             {services.map((service, index) => (
@@ -41,7 +41,7 @@ export default function Services() {
                     <h2 className="service-card__title">{service.title}</h2>
                     <p className="service-card__text">{service.short}</p>
                     <span className="link-arrow">
-                      Explore Service
+                      مشاهده خدمت
                       <ArrowRight size={16} />
                     </span>
                   </div>
@@ -52,11 +52,11 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section section--ivory" aria-label="Start a conversation">
+      <section className="section section--ivory" aria-label="شروع گفت‌وگو">
         <div className="container">
           <CtaBand
-            title="Not Sure Which Service You Need?"
-            text="Tell us about your business and current situation. We will recommend an appropriate scope — or say honestly if we are not the right fit."
+            title="مطمئن نیستید کدام خدمت را نیاز دارید؟"
+            text="درباره کسب‌وکار و وضعیت فعلی خود بگویید. دامنه مناسب را پیشنهاد می‌دهیم — یا صادقانه می‌گوییم اگر گزینه مناسبی نیستیم."
           />
         </div>
       </section>

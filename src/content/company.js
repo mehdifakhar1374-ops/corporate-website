@@ -1,131 +1,131 @@
-/** Shared content for the About page and the homepage narrative sections. */
+/** محتوای مشترک صفحه درباره ما و بخش‌های معرفی در صفحه اصلی. */
 
 export const about = {
-  label: 'About Us',
-  title: 'Who We Are',
+  label: 'درباره ما',
+  title: 'ما که هستیم',
   lead:
-    'At Horizon Financial Services, we believe that sound financial management is the foundation of sustainable business growth. We provide professional accounting, financial consulting, and business management services with a commitment to accuracy, transparency, and long-term client success.',
+    'در خدمات مالی افق بر این باوریم که مدیریت مالی صحیح، بنیان رشد پایدار کسب‌وکار است. ما خدمات حرفه‌ای حسابداری، مشاوره مالی و مدیریت کسب‌وکار را با تعهد به دقت، شفافیت و موفقیت بلندمدت مشتری ارائه می‌کنیم.',
   body:
-    'Our approach combines technical expertise, practical business insight, and personalized support to help organizations make better financial decisions.',
-  imageMain: { id: '7964413', alt: 'Advisors reviewing financial documents in a bright meeting room' },
-  imageDetail: { id: '11861957', alt: 'Curved glass façade of a contemporary office tower' },
+    'رویکرد ما ترکیبی از تخصص فنی، بینش عملی کسب‌وکار و پشتیبانی شخصی‌سازی‌شده است تا سازمان‌ها تصمیم‌های مالی بهتری بگیرند.',
+  imageMain: { id: '7964413', alt: 'مشاوران در حال بررسی اسناد مالی در اتاق جلسه‌ای روشن' },
+  imageDetail: { id: '11861957', alt: 'نمای شیشه‌ای منحنی یک برج اداری مدرن' },
 }
 
 export const mission = {
-  title: 'Our Mission',
+  title: 'مأموریت ما',
   text:
-    'To provide reliable and professional financial services that help businesses maintain financial clarity, improve decision-making, and achieve sustainable growth.',
+    'ارائه خدمات مالی قابل اعتماد و حرفه‌ای که به کسب‌وکارها کمک می‌کند شفافیت مالی خود را حفظ کنند، تصمیم‌گیری را بهبود دهند و به رشد پایدار برسند.',
 }
 
 export const vision = {
-  title: 'Our Vision',
+  title: 'چشم‌انداز ما',
   text:
-    'To become a trusted financial services partner recognized for professionalism, transparency, and lasting client relationships.',
+    'تبدیل شدن به شریک مالی قابل اعتمادی که با حرفه‌ای‌گری، شفافیت و روابط پایدار با مشتری شناخته می‌شود.',
 }
 
 export const values = [
   {
-    title: 'Integrity',
-    text: 'We give advice we would follow ourselves, and we say so plainly when something is outside our remit.',
+    title: 'صداقت',
+    text: 'توصیه‌ای می‌دهیم که خودمان به آن عمل می‌کنیم و اگر موضوعی خارج از حوزه تخصص ما باشد، صریح می‌گوییم.',
   },
   {
-    title: 'Accuracy',
-    text: 'Records are reviewed, reconciled, and documented — precision is the baseline, not an upgrade.',
+    title: 'دقت',
+    text: 'سوابق بازبینی، تطبیق و مستند می‌شوند — دقت، حداقل انتظار است نه یک ویژگی اضافه.',
   },
   {
-    title: 'Transparency',
-    text: 'Clear scope, clear fees, and clear reporting. Clients always know where their numbers stand.',
+    title: 'شفافیت',
+    text: 'دامنه خدمات روشن، هزینه‌های روشن و گزارش‌های روشن. مشتری همیشه می‌داند ارقامش در چه وضعیتی است.',
   },
   {
-    title: 'Professionalism',
-    text: 'Deadlines are commitments. Correspondence is timely, structured, and respectful of your time.',
+    title: 'حرفه‌ای‌گری',
+    text: 'مهلت‌ها تعهد هستند. مکاتبات به‌موقع، ساختاریافته و همراه با احترام به وقت شما انجام می‌شود.',
   },
   {
-    title: 'Accountability',
-    text: 'Every engagement has a named owner who is answerable for the quality of the work.',
+    title: 'پاسخگویی',
+    text: 'هر همکاری یک مسئول مشخص دارد که در قبال کیفیت کار پاسخگو است.',
   },
   {
-    title: 'Client Commitment',
-    text: 'We measure our work by the decisions it makes possible for the businesses we serve.',
+    title: 'تعهد به مشتری',
+    text: 'کار خود را با تصمیم‌هایی می‌سنجیم که برای کسب‌وکارهای تحت پوشش ممکن می‌کنیم.',
   },
 ]
 
 export const why = {
-  label: 'Why Horizon',
-  title: 'More Than Accounting. A Trusted Financial Partner.',
+  label: 'چرا افق',
+  title: 'فراتر از حسابداری؛ یک شریک مالی قابل اعتماد.',
   text:
-    'We combine professional expertise, organized financial processes, and a client-focused approach to help businesses move forward with greater confidence.',
+    'ما تخصص حرفه‌ای، فرایندهای مالی منظم و رویکردی مشتری‌محور را ترکیب می‌کنیم تا کسب‌وکارها با اطمینان بیشتری به پیش بروند.',
   items: [
     {
-      title: 'Professional Expertise',
-      text: 'Experienced financial professionals with a strong understanding of accounting and business financial management.',
+      title: 'تخصص حرفه‌ای',
+      text: 'متخصصان مالی باتجربه با شناخت عمیق از حسابداری و مدیریت مالی کسب‌وکار.',
     },
     {
-      title: 'Accuracy & Transparency',
-      text: 'Careful financial documentation, consistent reporting, and transparent communication.',
+      title: 'دقت و شفافیت',
+      text: 'مستندسازی دقیق مالی، گزارشگری یکدست و ارتباط شفاف.',
     },
     {
-      title: 'Personalized Service',
-      text: 'Solutions adapted to the structure, needs, and objectives of each business.',
+      title: 'خدمات شخصی‌سازی‌شده',
+      text: 'راهکارهایی متناسب با ساختار، نیازها و اهداف هر کسب‌وکار.',
     },
     {
-      title: 'Reliable Communication',
-      text: 'Clear communication, organized workflows, and consistent client support.',
+      title: 'ارتباط قابل اتکا',
+      text: 'ارتباط روشن، گردش‌کار منظم و پشتیبانی پیوسته از مشتری.',
     },
     {
-      title: 'Strategic Perspective',
-      text: 'Financial information presented in a way that supports better management decisions.',
+      title: 'نگاه راهبردی',
+      text: 'ارائه اطلاعات مالی به‌گونه‌ای که پشتیبان تصمیم‌های بهتر مدیریتی باشد.',
     },
     {
-      title: 'Long-Term Partnership',
-      text: 'Building lasting professional relationships through reliability, accountability, and service quality.',
+      title: 'همراهی بلندمدت',
+      text: 'ساختن روابط حرفه‌ای پایدار از طریق قابل اتکا بودن، پاسخگویی و کیفیت خدمات.',
     },
   ],
 }
 
 export const approach = {
-  label: 'Our Process',
-  title: 'A Clear Process. A Stronger Financial Foundation.',
-  text: 'A structured engagement, from the first conversation to ongoing financial support.',
+  label: 'فرایند ما',
+  title: 'فرایندی شفاف. بنیانی مالی قوی‌تر.',
+  text: 'یک همکاری ساختاریافته، از نخستین گفت‌وگو تا پشتیبانی مالی مستمر.',
   steps: [
     {
-      number: '01',
-      title: 'Initial Consultation',
-      text: 'We understand your business, current financial structure, and service requirements.',
+      number: '۰۱',
+      title: 'مشاوره اولیه',
+      text: 'کسب‌وکار، ساختار مالی فعلی و نیازهای خدماتی شما را می‌شناسیم.',
     },
     {
-      number: '02',
-      title: 'Financial Assessment',
-      text: 'We review available financial information and identify priorities, challenges, and opportunities.',
+      number: '۰۲',
+      title: 'ارزیابی مالی',
+      text: 'اطلاعات مالی موجود را بررسی می‌کنیم و اولویت‌ها، چالش‌ها و فرصت‌ها را شناسایی می‌کنیم.',
     },
     {
-      number: '03',
-      title: 'Service Planning',
-      text: 'We define the appropriate service scope, workflow, responsibilities, and reporting requirements.',
+      number: '۰۳',
+      title: 'برنامه‌ریزی خدمات',
+      text: 'دامنه مناسب خدمات، گردش‌کار، مسئولیت‌ها و الزامات گزارشگری را مشخص می‌کنیم.',
     },
     {
-      number: '04',
-      title: 'Ongoing Support',
-      text: 'We deliver the agreed services and maintain structured communication and financial follow-up.',
+      number: '۰۴',
+      title: 'پشتیبانی مستمر',
+      text: 'خدمات توافق‌شده را ارائه می‌دهیم و ارتباط ساختاریافته و پیگیری مالی را حفظ می‌کنیم.',
     },
   ],
 }
 
 export const expertise = [
   {
-    title: 'Accounting operations',
-    text: 'Day-to-day recording, reconciliation and month-end close for growing businesses.',
+    title: 'عملیات حسابداری',
+    text: 'ثبت روزانه، تطبیق و بستن پایان ماه برای کسب‌وکارهای در حال رشد.',
   },
   {
-    title: 'Management reporting',
-    text: 'Reporting packs that translate ledger activity into decisions leadership can act on.',
+    title: 'گزارشگری مدیریتی',
+    text: 'بسته‌های گزارشی که فعالیت دفتر کل را به تصمیم‌های قابل اجرا برای مدیریت تبدیل می‌کند.',
   },
   {
-    title: 'Tax readiness',
-    text: 'Organised records and documented positions so filing season is uneventful.',
+    title: 'آمادگی مالیاتی',
+    text: 'سوابق منظم و مواضع مستند تا فصل اظهارنامه بدون دغدغه سپری شود.',
   },
   {
-    title: 'Business advisory',
-    text: 'Budgeting, cost structure and planning support tied to commercial objectives.',
+    title: 'مشاوره کسب‌وکار',
+    text: 'پشتیبانی در بودجه‌بندی، ساختار هزینه و برنامه‌ریزی هم‌راستا با اهداف تجاری.',
   },
 ]

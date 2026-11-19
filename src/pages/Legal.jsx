@@ -4,88 +4,88 @@ import usePageMeta from '../lib/usePageMeta.js'
 
 const CONTENT = {
   privacy: {
-    title: 'Privacy Policy',
+    title: 'سیاست حفظ حریم خصوصی',
     intro:
-      'This policy explains what information Horizon Financial Services collects through this website, why we collect it, and how it is handled.',
+      'این سیاست توضیح می‌دهد که خدمات مالی افق از طریق این وب‌سایت چه اطلاعاتی جمع‌آوری می‌کند، چرا آن را جمع‌آوری می‌کنیم و چگونه با آن برخورد می‌شود.',
     sections: [
       {
-        title: 'Information we collect',
+        title: 'اطلاعاتی که جمع‌آوری می‌کنیم',
         paragraphs: [
-          'We collect the information you provide voluntarily through the consultation form and the newsletter subscription field. This includes your name, company, email address, telephone number, industry, company size, preferred contact method and the details of your enquiry.',
-          'We also receive standard technical information generated when a page is requested, such as the pages visited and the type of device used. This is used only to maintain the site and understand which content is useful.',
+          'ما اطلاعاتی را جمع‌آوری می‌کنیم که شما به‌صورت داوطلبانه از طریق فرم مشاوره و فیلد عضویت در خبرنامه ارائه می‌دهید. این اطلاعات شامل نام، شرکت، نشانی ایمیل، شماره تلفن، صنعت، اندازه شرکت، روش تماس ترجیحی و جزئیات درخواست شماست.',
+          'همچنین اطلاعات فنی متعارف هنگام درخواست یک صفحه دریافت می‌کنیم، مانند صفحه‌های بازدیدشده و نوع دستگاه. این اطلاعات فقط برای نگهداری سایت و درک اینکه کدام محتوا مفید است استفاده می‌شود.',
         ],
       },
       {
-        title: 'How we use it',
+        title: 'نحوه استفاده ما',
         paragraphs: [
-          'Enquiry details are used to respond to your request, arrange a consultation and, where an engagement follows, to prepare a written scope and proposal.',
-          'Newsletter subscriptions are used only to send the financial insights and business updates you asked for. Every message includes a way to unsubscribe.',
+          'جزئیات درخواست برای پاسخ به درخواست شما، هماهنگی مشاوره و در صورت شکل‌گیری همکاری، تهیه دامنه و پیشنهاد مکتوب استفاده می‌شود.',
+          'عضویت در خبرنامه فقط برای ارسال بینش‌های مالی و اخبار کسب‌وکاری که درخواست کرده‌اید استفاده می‌شود. هر پیام شامل راهی برای لغو عضویت است.',
         ],
       },
       {
-        title: 'Retention and access',
+        title: 'نگهداری و دسترسی',
         paragraphs: [
-          'Enquiry records are retained for as long as needed to respond and, where relevant, for the duration of the professional relationship plus any period required by applicable record-keeping obligations.',
-          'Access to enquiry data is limited to team members who need it to respond. We do not sell personal information, and we do not share it with third parties for marketing purposes.',
+          'سوابق درخواست‌ها تا زمانی که برای پاسخ‌گویی لازم است و در موارد مرتبط، در طول رابطه حرفه‌ای به‌همراه هر دوره‌ای که الزامات مربوط به نگهداری سوابق ایجاب کند، نگهداری می‌شود.',
+          'دسترسی به داده‌های درخواست محدود به اعضای تیمی است که برای پاسخ‌گویی به آن نیاز دارند. ما اطلاعات شخصی را نمی‌فروشیم و آن را برای اهداف بازاریابی با اشخاص ثالث به اشتراک نمی‌گذاریم.',
         ],
       },
       {
-        title: 'Your choices',
+        title: 'انتخاب‌های شما',
         paragraphs: [
-          'You may ask us to confirm what personal information we hold about you, to correct it, or to delete it where no legal or contractual obligation requires us to retain it. Requests can be sent to the address below.',
+          'می‌توانید از ما بخواهید تأیید کنیم چه اطلاعات شخصی‌ای درباره شما نگه می‌داریم، آن را اصلاح کنیم یا در جایی که هیچ الزام قانونی یا قراردادی برای نگهداری وجود ندارد، حذف کنیم. درخواست‌ها را می‌توانید به نشانی زیر ارسال کنید.',
         ],
       },
       {
-        title: 'Contact',
-        paragraphs: [`Questions about this policy can be sent to ${site.contact.email}.`],
+        title: 'تماس',
+        paragraphs: [`پرسش‌های مربوط به این سیاست را می‌توانید به ${site.contact.email} ارسال کنید.`],
       },
       {
-        title: 'Note on this document',
+        title: 'یادداشتی درباره این سند',
         paragraphs: [
-          'This policy is provided as an editable starting point for the website. It should be reviewed and adapted to the firm’s actual data practices and the legal requirements of the jurisdictions in which it operates before launch.',
+          'این سیاست به‌عنوان نقطه شروع قابل ویرایش برای وب‌سایت ارائه شده است. پیش از انتشار باید با رویه‌های واقعی داده شرکت و الزامات قانونی حوزه‌های فعالیت آن بازبینی و سازگار شود.',
         ],
       },
     ],
   },
   terms: {
-    title: 'Terms of Use',
+    title: 'شرایط استفاده',
     intro:
-      'These terms govern the use of the Horizon Financial Services website. By using this site you accept them.',
+      'این شرایط بر استفاده از وب‌سایت خدمات مالی افق حاکم است. با استفاده از این سایت، آن را می‌پذیرید.',
     sections: [
       {
-        title: 'Website content',
+        title: 'محتوای وب‌سایت',
         paragraphs: [
-          'The content of this website is provided for general information about our firm and the services we offer. It does not constitute accounting, tax, legal or financial advice, and it should not be relied upon as a substitute for professional advice on your own circumstances.',
+          'محتوای این وب‌سایت برای اطلاعات عمومی درباره شرکت و خدماتی که ارائه می‌دهیم فراهم شده است. این محتوا مشاوره حسابداری، مالیاتی، حقوقی یا مالی محسوب نمی‌شود و نباید جایگزین مشاوره حرفه‌ای درباره شرایط خاص شما تلقی شود.',
         ],
       },
       {
-        title: 'No client relationship',
+        title: 'عدم ایجاد رابطه مشتری',
         paragraphs: [
-          'Sending an enquiry through this website does not create a client relationship. A professional relationship begins only when a written engagement scope has been agreed and accepted by both parties.',
+          'ارسال درخواست از طریق این وب‌سایت رابطه مشتری ایجاد نمی‌کند. رابطه حرفه‌ای تنها زمانی آغاز می‌شود که دامنه همکاری مکتوب توافق و از سوی هر دو طرف پذیرفته شود.',
         ],
       },
       {
-        title: 'Accuracy and availability',
+        title: 'دقت و دسترس‌پذیری',
         paragraphs: [
-          'We take care to keep the information on this site accurate and current, but we do not warrant that it is complete or free from error at all times. The site may be changed, suspended or withdrawn without notice.',
+          'می‌کوشیم اطلاعات این سایت را دقیق و به‌روز نگه داریم، اما تضمین نمی‌کنیم که در همه زمان‌ها کامل یا بدون خطا باشد. سایت ممکن است بدون اطلاع قبلی تغییر کند، متوقف یا برداشته شود.',
         ],
       },
       {
-        title: 'Intellectual property',
+        title: 'مالکیت معنوی',
         paragraphs: [
-          'The text, layout, branding and design of this website belong to Horizon Financial Services unless otherwise stated. Photography is used under the licence terms of the respective providers.',
+          'متن، چیدمان، برند و طراحی این وب‌سایت، مگر آنکه خلاف آن ذکر شده باشد، متعلق به خدمات مالی افق است. تصاویر بر اساس شرایط مجوز ارائه‌دهندگان مربوط استفاده می‌شوند.',
         ],
       },
       {
-        title: 'Limitation of liability',
+        title: 'محدودیت مسئولیت',
         paragraphs: [
-          'To the extent permitted by applicable law, we are not liable for any loss arising from reliance on the general information published on this website.',
+          'تا حدی که قانون قابل اجرا اجازه دهد، ما در قبال هیچ زیانی که از اتکا به اطلاعات عمومی منتشرشده در این وب‌سایت ناشی شود مسئول نیستیم.',
         ],
       },
       {
-        title: 'Note on this document',
+        title: 'یادداشتی درباره این سند',
         paragraphs: [
-          'These terms are an editable starting point and should be reviewed by qualified counsel before launch.',
+          'این شرایط یک نقطه شروع قابل ویرایش است و پیش از انتشار باید توسط مشاور واجد صلاحیت بازبینی شود.',
         ],
       },
     ],
@@ -95,15 +95,15 @@ const CONTENT = {
 export default function Legal({ kind }) {
   const content = CONTENT[kind] || CONTENT.privacy
 
-  usePageMeta(`${content.title} — Horizon Financial Services`, content.intro)
+  usePageMeta(`${content.title} — خدمات مالی افق`, content.intro)
 
   return (
     <>
       <PageHero
-        eyebrow="Legal"
+        eyebrow="حقوقی"
         title={content.title}
         text={content.intro}
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: content.title }]}
+        breadcrumb={[{ label: 'خانه', to: '/' }, { label: content.title }]}
       />
 
       <section className="section section--white">
